@@ -17,3 +17,9 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 pip show mlflow
+
+
+mkdir artifacts
+curl -u admin:P@ssw0rd http://localhost:8081/repository/mlmodels-staging/com/adyen/alfred/dummy/1.0/dummy-1.0.pkl -O artifacts/dummy-1.0.pkl
+ls -l
+python -m pytest test

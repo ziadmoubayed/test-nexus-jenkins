@@ -13,6 +13,7 @@ RUN pip install mlflow==${MLFLOW_VERSION} && \
     mkdir -p ${FILE_STORE} && \
     mkdir -p ${ARTIFACT_STORE}
 
+COPY test  ${MLFLOW_HOME}/test
 
 
 # COPY scripts/run.sh ${MLFLOW_HOME}/scripts/run.sh
@@ -22,7 +23,7 @@ RUN pip install mlflow==${MLFLOW_VERSION} && \
 
 # VOLUME ["${MLFLOW_HOME}/scripts/", "${FILE_STORE}", "${ARTIFACT_STORE}"]
 
-# WORKDIR ${MLFLOW_HOME}
+WORKDIR ${MLFLOW_HOME}
 
 # ENTRYPOINT ["./scripts/run.sh"]
 
