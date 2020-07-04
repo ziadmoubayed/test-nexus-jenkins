@@ -1,7 +1,6 @@
 pipeline {
     agent {
-        dockerfile true
-        docker { 
+        dockerfile { 
             image 'python-mlflow'
             label 'python-mlflow'
             // args  '-v /tmp:/tmp'
