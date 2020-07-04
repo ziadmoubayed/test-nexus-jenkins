@@ -13,8 +13,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python -V'
                 sh 'bash setup.sh'
+                sh 'python -V'
             }
         }
     }
