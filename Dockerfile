@@ -8,13 +8,17 @@ ENV SERVER_HOST 0.0.0.0
 ENV FILE_STORE ${MLFLOW_HOME}/fileStore
 ENV ARTIFACT_STORE ${MLFLOW_HOME}/artifactStore
 
-RUN pip install mlflow==${MLFLOW_VERSION} && \
-    mkdir -p ${MLFLOW_HOME}/scripts && \
-    mkdir -p ${FILE_STORE} && \
-    mkdir -p ${ARTIFACT_STORE}
+#RUN pip install mlflow==${MLFLOW_VERSION} && \
+#    mkdir -p ${MLFLOW_HOME}/scripts && \
+#    mkdir -p ${FILE_STORE} && \
+#    mkdir -p ${ARTIFACT_STORE}
 
 COPY test  ${MLFLOW_HOME}/test
+COPY requirements.txt  ${MLFLOW_HOME}/requirements.txt
 
+WORKDIR ${MLFLOW_HOME}
+RUN pip install -r ${MLFLOW_HOME}/requirements.txt
+CMD ["/bin/bash"]
 
 # COPY scripts/run.sh ${MLFLOW_HOME}/scripts/run.sh
 # RUN chmod +x ${MLFLOW_HOME}/scripts/run.sh
@@ -23,8 +27,6 @@ COPY test  ${MLFLOW_HOME}/test
 
 # VOLUME ["${MLFLOW_HOME}/scripts/", "${FILE_STORE}", "${ARTIFACT_STORE}"]
 
-WORKDIR ${MLFLOW_HOME}
 
 # ENTRYPOINT ["./scripts/run.sh"]
 
-CMD ["/bin/bash"]
