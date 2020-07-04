@@ -13,14 +13,16 @@ RUN pip install mlflow==${MLFLOW_VERSION} && \
     mkdir -p ${FILE_STORE} && \
     mkdir -p ${ARTIFACT_STORE}
 
-COPY scripts/run.sh ${MLFLOW_HOME}/scripts/run.sh
-RUN chmod +x ${MLFLOW_HOME}/scripts/run.sh
 
-EXPOSE ${SERVER_PORT}/tcp
 
-VOLUME ["${MLFLOW_HOME}/scripts/", "${FILE_STORE}", "${ARTIFACT_STORE}"]
+# COPY scripts/run.sh ${MLFLOW_HOME}/scripts/run.sh
+# RUN chmod +x ${MLFLOW_HOME}/scripts/run.sh
 
-WORKDIR ${MLFLOW_HOME}
+# EXPOSE ${SERVER_PORT}/tcp
+
+# VOLUME ["${MLFLOW_HOME}/scripts/", "${FILE_STORE}", "${ARTIFACT_STORE}"]
+
+# WORKDIR ${MLFLOW_HOME}
 
 # ENTRYPOINT ["./scripts/run.sh"]
 
