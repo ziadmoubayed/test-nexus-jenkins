@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            dir 'docker' 
+            //dir 'docker' 
             filename 'Dockerfile'
             //image 'python:3.6.11-alpine3.11'
             //image 'centos/python-36-centos7'
