@@ -3,7 +3,7 @@ pipeline {
         dockerfile {
             //dir 'docker' 
             filename 'Dockerfile'
-            label 'python-mlflow'
+            //label 'python-mlflow'
             // args  '-v /tmp:/tmp'
             // dir, filename, label
             }
