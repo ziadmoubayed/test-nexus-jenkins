@@ -1,9 +1,11 @@
 pipeline {
     agent {
-        dockerfile { 
-            image 'python-mlflow'
+        dockerfile {
+            //dir 'docker' 
+            filename 'Dockerfile'
             label 'python-mlflow'
             // args  '-v /tmp:/tmp'
+            // dir, filename, label
             }
     }
     stages {
