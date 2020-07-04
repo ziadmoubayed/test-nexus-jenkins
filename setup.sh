@@ -1,4 +1,4 @@
 !#/bin/bash
 echo "Hello World"
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 pip show mlflow

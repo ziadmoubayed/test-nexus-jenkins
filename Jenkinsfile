@@ -1,9 +1,9 @@
 pipeline {
     agent {
-        dockerfile {
+        docker {
             //dir 'docker' 
-            filename 'Dockerfile'
-            //label 'python-mlflow'
+            //filename 'Dockerfile'
+            label 'centos/python-36-centos7'
             // args  '-v /tmp:/tmp'
             // dir, filename, label
             }
