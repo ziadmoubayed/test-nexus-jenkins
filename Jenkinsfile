@@ -3,7 +3,8 @@ pipeline {
         docker {
             //dir 'docker' 
             //filename 'Dockerfile'
-            image 'centos/python-36-centos7'
+            image: 'python:3.6.11-alpine3.11'
+            //image 'centos/python-36-centos7'
             // args  '-v /tmp:/tmp'
             // dir, filename, label
             }
