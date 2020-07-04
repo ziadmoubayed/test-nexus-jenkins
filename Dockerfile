@@ -22,4 +22,6 @@ VOLUME ["${MLFLOW_HOME}/scripts/", "${FILE_STORE}", "${ARTIFACT_STORE}"]
 
 WORKDIR ${MLFLOW_HOME}
 
-ENTRYPOINT ["./scripts/run.sh"]
+# ENTRYPOINT ["./scripts/run.sh"]
+
+CMD ["/bin/bash"]
