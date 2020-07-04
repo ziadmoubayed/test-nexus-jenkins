@@ -1,6 +1,11 @@
 pipeline {
     agent {
-        docker { image 'centos/python-36-centos7' }
+        dockerfile true
+        docker { 
+            image 'python-mlflow'
+            label 'python-mlflow'
+            // args  '-v /tmp:/tmp'
+            }
     }
     stages {
         stage('Test') {
