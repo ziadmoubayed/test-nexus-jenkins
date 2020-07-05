@@ -19,8 +19,9 @@ echo "Hello World"
 # pip show mlflow
 
 
-#mkdir artifacts
-#curl -u admin:P@ssw0rd http://localhost:8081/repository/mlmodels-staging/com/adyen/alfred/dummy/1.0/dummy-1.0.pkl -O artifacts/dummy-1.0.pkl
+# mkdir artifacts
+# curl -I -u ziad:admin http://localhost:8080/job/mlflow-test-promote-pipeline/build?token=hellotokennnnnn
+
 ls -l
 ls -l test
 python -m pytest test
