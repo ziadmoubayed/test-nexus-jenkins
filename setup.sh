@@ -22,7 +22,7 @@ echo "Hello World"
 # mkdir artifacts
 # curl -I -u ziad:admin http://localhost:8080/job/mlflow-test-promote-pipeline/build?token=hellotokennnnnn
 
-curl -u admin:P@ssw0rd http://localhost:8081/repository/mlmodels-staging/com/adyen/alfred/dummy/1.0/dummy-1.0.pkl --output dummy-1.0.pkl
+curl -u admin:P@ssw0rd http://192.168.1.89:8081/repository/mlmodels-staging/com/adyen/alfred/dummy/1.0/dummy-1.0.pkl --output dummy-1.0.pkl
 ls -l
 ls -l test
 python -m pytest test
